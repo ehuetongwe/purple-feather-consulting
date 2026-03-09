@@ -394,9 +394,9 @@ nav.scrolled {
 .hero-feather-bg {
   position: absolute;
   top: 50%;
-  right: 15%;
+  right: 6%;
   transform: translateY(-50%);
-  width: 550px;
+  width: 825px;
   opacity: 0.05;
   pointer-events: none;
   user-select: none;
