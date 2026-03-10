@@ -368,7 +368,7 @@ nav.scrolled {
   padding-left: 2.5rem;
 }
 
-.stat-item {}
+
 
 .stat-num {
   font-family: var(--font-display);
@@ -501,9 +501,17 @@ section {
 }
 
 .services-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1.5px;
+  display: flex;
+  overflow-x: auto;
+  gap: 1.5rem;
+  padding: 0 4rem;
+  /* Hide scrollbar for Firefox */
+  scrollbar-width: none;
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.services-grid::-webkit-scrollbar {
+  display: none;
 }
 
 .service-card {
@@ -513,6 +521,9 @@ section {
   overflow: hidden;
   transition: background 0.3s, box-shadow 0.4s;
   cursor: pointer;
+  flex: 0 0 380px;
+  /* Fixed width, no shrink */
+  width: 380px;
 }
 
 .service-card::after {
@@ -638,8 +649,8 @@ section {
 
 .service-footer-note {
   font-family: var(--font-mono);
-  font-size: 0.55rem;
-  color: var(--mist);
+  font-size: 0.85rem;
+  color: var(--cream-dim);
   margin-top: 1.5rem;
   padding-top: 1rem;
   border-top: 1px solid rgba(184, 176, 166, 0.12);
@@ -1183,9 +1194,18 @@ footer {
     padding: 5rem 2rem;
   }
 
-  .services-grid,
   .case-grid {
     grid-template-columns: 1fr;
+  }
+
+  .services-grid {
+    padding: 0 1.5rem;
+  }
+
+  .service-card {
+    flex: 0 0 85vw;
+    width: 85vw;
+    padding: 2.5rem 1.8rem;
   }
 
   .process-grid {
