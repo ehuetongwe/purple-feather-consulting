@@ -679,6 +679,25 @@ section {
   line-height: 1.6;
 }
 
+.service-learn-more {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--gold);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 1.2rem;
+  text-decoration: none;
+  transition: gap 0.2s;
+}
+
+.service-card:hover .service-learn-more,
+.service-learn-more:hover {
+  gap: 0.9rem;
+}
+
 /* ── ABOUT STRIP ── */
 .about-strip {
   background: var(--plum);
@@ -1292,5 +1311,96 @@ footer {
   .fit-a {
     text-align: left;
     margin-left: 0;
+  }
+}
+
+/* ── BUILDS PAGE SPECIFIC ── */
+.two-col-layout {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  gap: 4rem;
+  margin-top: 3.5rem;
+}
+
+@media (max-width: 1024px) {
+  .two-col-layout {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+}
+
+.intro-p {
+  font-family: var(--font-body);
+  color: var(--mist);
+  font-size: 0.95rem;
+  margin-top: 1.5rem;
+  line-height: 1.8;
+}
+
+.mist-arrows li::before {
+  color: var(--mist) !important;
+}
+
+.text-link {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--gold);
+  text-decoration: none;
+  margin-top: 2.5rem;
+  transition: opacity 0.2s;
+}
+
+.text-link:hover {
+  text-decoration: underline;
+  opacity: 0.8;
+}
+
+.three-col-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  margin-top: 3.5rem;
+}
+
+.three-col-grid .service-card {
+  flex: auto;
+  width: 100%;
+  padding: 2rem 1.8rem;
+}
+
+@media (max-width: 1024px) {
+  .three-col-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+}
+
+.process-grid-4 {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0;
+  margin-top: 4rem;
+  border: 1px solid rgba(184, 176, 166, 0.1);
+}
+
+@media (max-width: 1024px) {
+  .process-grid-4 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .process-grid-4 {
+    grid-template-columns: 1fr;
+  }
+
+  .process-grid-4 .process-step {
+    border-right: none;
+    border-bottom: 1px solid rgba(184, 176, 166, 0.1);
+  }
+
+  .process-grid-4 .process-step:last-child {
+    border-bottom: none;
   }
 }
